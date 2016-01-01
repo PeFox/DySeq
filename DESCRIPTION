@@ -1,0 +1,17 @@
+Package: DySeq
+Type: Package
+Title: functions for dyadic sequence analyses
+Version: 0.1
+Date: 2015-12-01
+Author: Peter Fuchs
+Maintainer: Peter Fuchs <Pete.Fuchs@gmail.com>
+Description: This package provides useful functions for dyadic binary/
+    dichotomous sequence analyses:/- Implementation of Bakeman & Gottman's (1997)
+    approach: automatic case wise loglinear regressions and significance testing
+    over the aggregated coefficients/ - Calculation of needed time intervals
+    for Bakeman & Gottman's approach/ - Wrapper for the coxph function from the
+    'survival package' that can be applied directly to dyadic sequences/ - Some
+    example data for vignettes
+License: GPL-3
+LazyData: TRUE
+RoxygenNote: 5.0.1

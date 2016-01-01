@@ -1,0 +1,78 @@
+#'StateTrans
+#'
+#'Produces state transition tables for dyadic binary sequences.
+#'For an extensive overvie see Kenny, Kashy and Cook (2006).
+#'The original idea stems (as far as known) from Bakeman and Gottman (1997).
+#'
+#'@param x x Dataframe or matix containing combined sequences, see help(StateExpand)
+#'@param first a logical value indicating if the first sequence should used as dependend variable (TRUE) or the second (FALSE)
+#'@param dep.lab a two-element string vector with labels dependend variable (first level zero, second corresponds to level one)
+#'@param indep.lab a four-element string vector with labels for the combined variable (order is correspondung to the order of the StateExpand function)
+#'
+#'@references Bakeman, R., & Gottman, J. M. (1997). Observing interaction: An introduction to sequential analysis. Cambridge university press.
+#'@references Kenny, D. A., Kashy, D. A., & Cook, W. L. (2006). Dyadic data analysis. Guilford Press.
+#'
+#'
+#'
+#'@examples
+#'
+#'# Example 1: Sequences from couples cope
+#'
+#'data(CouplesCope)
+#'my.s<-StateExpand(CouplesCope, 2:49, 50:97)
+#'StateTrans(my.s) # First sequence is dependend variable (what behavior preceeds stress signals?)
+#'StateTrans(my.s, FALSE) # Second sequence is dependend variable (what behavior preceeds dyadic coping signals?)
+#'StateTrans(my.s, FALSE)[[41]] # investigating a single case
+#'
+#'@export
+
+
+StateTrans<-function(x,first=TRUE, dep.lab=c("1","0"), indep.lab=c("1-1","1-0","0-1","0-0")) {
+
+  output<-list()
+  comb<-x
+
+  for(case in 1:length(x[,1])){
+
+    y<-matrix(rep(0,8),4,2)
+    colnames(y)<-dep.lab
+    rownames(y)<-indep.lab
+
+    if(first){
+      for(i in 2:length(comb[case,])){
+        if(comb[case,(i-1)]==0 & (comb[case,i]==1 |comb[case,i]==3)) y[4,1]<-y[4,1]+1
+        if(comb[case,(i-1)]==1 & (comb[case,i]==1 |comb[case,i]==3)) y[2,1]<-y[2,1]+1
+        if(comb[case,(i-1)]==2 & (comb[case,i]==1 |comb[case,i]==3)) y[3,1]<-y[3,1]+1
+        if(comb[case,(i-1)]==3 & (comb[case,i]==1 |comb[case,i]==3)) y[1,1]<-y[1,1]+1
+
+        if(comb[case,(i-1)]==0 & (comb[case,i]==0 |comb[case,i]==2)) y[4,2]<-y[4,2]+1
+        if(comb[case,(i-1)]==1 & (comb[case,i]==0 |comb[case,i]==2)) y[2,2]<-y[2,2]+1
+        if(comb[case,(i-1)]==2 & (comb[case,i]==0 |comb[case,i]==2)) y[3,2]<-y[3,2]+1
+        if(comb[case,(i-1)]==3 & (comb[case,i]==0 |comb[case,i]==2)) y[1,2]<-y[1,2]+1
+      }
+    }
+
+
+    if(!first){
+      for(i in 2:length(comb[case,])){
+        if(comb[case,(i-1)]==0 & (comb[case,i]==2 |comb[case,i]==3)) y[4,1]<-y[4,1]+1
+        if(comb[case,(i-1)]==1 & (comb[case,i]==2 |comb[case,i]==3)) y[2,1]<-y[2,1]+1
+        if(comb[case,(i-1)]==2 & (comb[case,i]==2 |comb[case,i]==3)) y[3,1]<-y[3,1]+1
+        if(comb[case,(i-1)]==3 & (comb[case,i]==2 |comb[case,i]==3)) y[1,1]<-y[1,1]+1
+
+        if(comb[case,(i-1)]==0 & (comb[case,i]==0 |comb[case,i]==1)) y[4,2]<-y[4,2]+1
+        if(comb[case,(i-1)]==1 & (comb[case,i]==0 |comb[case,i]==1)) y[2,2]<-y[2,2]+1
+        if(comb[case,(i-1)]==2 & (comb[case,i]==0 |comb[case,i]==1)) y[3,2]<-y[3,2]+1
+        if(comb[case,(i-1)]==3 & (comb[case,i]==0 |comb[case,i]==1)) y[1,2]<-y[1,2]+1
+      }
+    }
+
+    output[[case]]<-y
+    class(output)[2]<-"state.trans"
+
+  }
+  return(output)
+}
+
+
+
