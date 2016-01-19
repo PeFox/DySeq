@@ -1,22 +1,29 @@
 #'EstTime
 #'
-#'Plots simulated number low freq or zero frequencies for a state-transition table against the number of time points
+#'Simulates number of low or zero frequencies for a state-transition table
+#'and plots these against the number of time points/intervalls 
 #'
 #'
-#'@param x a matrix containing the assumed probabilities for the expected transition tables
-#'@param t optinol: a vector of time intervalls for which frequencies should be simulated
-#'@param crit optional, but must be sepcified is t is not: Simulations will end if zero frequencies are less than crit
-#'@param zero optional: if FALSE Simulations will end if number of low frequency problems is less than crit
+#'@param x a matrix containing the assumed probabilities (see EstFreq for further detail!)
+#'@param t optional: a vector of time intervalls for which frequencies should be simulated
+#'@param crit optional: but must be sepcified if t is not; 
+#'Simulations will end if the relative frequency of zero cells is less than crit
+#'@param zero optional: if FALSE simulations will end if number of low frequencies 
+#'(instead of zero frequencies) is less than crit
 #'@param k Number of simulations (at least 20.000 is recommended)
 #'@param min.cell a single integer defines what counts as a low frequency (5 by convention)
-#'@param pos position of the outputs legend. Options are: "bottomleft", "bottomright", "upperleft", and "upperright".
+#'@param pos position of the output's legend. 
+#'Options are: "bottomleft", "bottomright", "upperleft", and "upperright".
 #'@param smoothed logical value. If true, outputlines will be smoothed!
 #'@param show.it single integer that defines which steps of iteration protocol should be shown. Only active if t is not defined else iterationprotocoll is replaced with a progression bar
 #'@param max.it single integer that defines the maximum number of iterations if t is not specified.
 #'
-#'@return a EstTime object; a list of three vectors that will, if printed, provide a plot of expected number of low and zero cell frequencies
+#'@return a EstTime object; a list of three vectors
+#'if printed, provides a plot of expected number of low and zero cell frequencies
 #'
-#'@details First vector represents time points, second frequency of cases with zero's, thrid frequency of cases with low cell frequencies
+#'@details First vector represents time points, 
+#'second vector provides rel. frequency of cases with zero's, 
+#'third vector rel. frequency of cases with low cell frequencies
 #'
 #'
 #'
