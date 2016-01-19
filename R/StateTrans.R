@@ -1,13 +1,13 @@
 #'StateTrans
 #'
-#'Produces state transition tables for dyadic binary sequences.
-#'For an extensive overvie see Kenny, Kashy and Cook (2006).
-#'The original idea stems (as far as known) from Bakeman and Gottman (1997).
+#'Produces a state transition table for dyadic binary sequences.
+#'For an extensive overview see Kenny, Kashy and Cook (2006).
+#'The original idea stems from (as far as known) Bakeman and Gottman (1997).
 #'
-#'@param x x Dataframe or matix containing combined sequences, see help(StateExpand)
-#'@param first a logical value indicating if the first sequence should used as dependend variable (TRUE) or the second (FALSE)
-#'@param dep.lab a two-element string vector with labels dependend variable (first level zero, second corresponds to level one)
-#'@param indep.lab a four-element string vector with labels for the combined variable (order is correspondung to the order of the StateExpand function)
+#'@param x Dataframe or matix containing combined sequences, see help(StateExpand)
+#'@param first logical value indicating if the first sequence should used as dependend variable (TRUE) or the second (FALSE)
+#'@param dep.lab two-element string vector with labels for dependend variable (first entry corresponds to the value zero, the second to one)
+#'@param indep.lab four-element string vector with labels for the combined variable (order corresponds to the order of the StateExpand function)
 #'
 #'@references Bakeman, R., & Gottman, J. M. (1997). Observing interaction: An introduction to sequential analysis. Cambridge university press.
 #'@references Kenny, D. A., Kashy, D. A., & Cook, W. L. (2006). Dyadic data analysis. Guilford Press.

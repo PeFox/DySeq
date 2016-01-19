@@ -1,13 +1,13 @@
 #'LastOccur
 #'
-#'Returns index of last occurence
+#'Returns index of last occurence 
 #'
 #'
 #'@param x Dataframe or matix containing one sequence per row
 #'@param y The value of interest
 #'
-#'@return returns a vector containing containing for every row the index of the las occurence.
-#'
+#'@return returns a vector containing the index of the last 
+#'event occurence for every row. 
 #'
 #'
 #'@examples

@@ -3,8 +3,9 @@
 #'Implementation of Bakeman & Gottman (1997) for sequence analysis
 #'Kenny, Kashy & Cook (2006) provide further examples.
 #'
+#'
 #'@param x a state.trans object or a list of 4*2 state-transition tables
-#'@param delta a constant added to every cell, required if zero frequencies occur!
+#'@param delta constant added to every cell, required if zero frequencies occur!
 #'@param subgroups an optional vector containing groupmembership if estimates should be compared between groups
 #'
 #'@references
@@ -21,6 +22,8 @@
 #'my.trans<-StateTrans(my.states, F)
 #'my.logseq<-LogSeq(my.trans)
 #'my.logseq
+#'
+#'plot(my.logseq) # interaction can be plotted
 #'
 #'single.LogSeq(my.logseq, 41) # for single case analysis
 #'

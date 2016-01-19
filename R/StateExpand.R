@@ -8,7 +8,7 @@
 #'@param seq2 a vector that indicates all columns of the second sequence
 #'@param replace.na an integer that is used for replacement or if FALSE, no replacement will take place
 #'
-#'@return returns a matrix with the combined sequences. Columns keep their names.
+#'@return returns a matrix with the combined sequences. 
 #'
 #'@details Takes a dataframe or matrix with dyadic binary data in wide data format, that is:
 #' - one observation unit (for example one couple) is represented by one row
@@ -26,9 +26,9 @@
 #'
 #' .... use:
 #'- Most packages are only suited for univariat sequence analysis.
-#'  By this tranformation other
-#'- state-expand-sequences is needed for some of the other functions
-#'  of this package. If it is, it will be mentioned in the functions documentation.
+#'- This function transforms dyadic dequences into univariate sequences.
+#'- state-expand-sequences are needed for some of the other functions of this package.
+#'  
 #'
 #'@references
 #'  Bakeman, R., & Gottman, J. M. (1997). Observing interaction: An introduction to sequential analysis. Cambridge university press.

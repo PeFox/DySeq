@@ -4,7 +4,7 @@
 #'
 #'
 #'@param x a vector containing cumulated hazard or a survfit-object from the 'survival'-package
-#'@param t optional vectorcontainting time reference for x (is required for plot)
+#'@param t optional: vector containting time reference for x (is required for plot)
 #'@param plot logical value indicating if non-cumulated plot should be generated
 #'
 #'@examples

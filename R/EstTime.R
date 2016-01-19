@@ -18,7 +18,7 @@
 #'@param show.it single integer that defines which steps of iteration protocol should be shown. Only active if t is not defined else iterationprotocoll is replaced with a progression bar
 #'@param max.it single integer that defines the maximum number of iterations if t is not specified.
 #'
-#'@return a EstTime object; a list of three vectors
+#'@return EstTime object; a list of three vectors
 #'if printed, provides a plot of expected number of low and zero cell frequencies
 #'
 #'@details First vector represents time points, 
@@ -28,9 +28,12 @@
 #'
 #'
 #'@examples
-#'
+#'my.trans.table<-matrix(c(0.57, 0.13,0.05,0.05,0.05, 0.05,0.05,0.05),4,2)
+#'my.cellproblems<-EstTime(my.trans.table, k=500) # low k only for examplification purposes!
+#'my.cellproblems
 #'
 #'@export
+
 
 
 EstTime<-function(x,t=NA,crit=0.05,zero=T,min.cell=5, k=20000, pos="bottomleft", smoothed=T, show.it=10, max.it=10000){

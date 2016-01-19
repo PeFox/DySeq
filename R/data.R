@@ -21,7 +21,7 @@
 #' \item{DCCB...}{Was dyadic coping shown in the following time intervall? (...)}
 #' }
 #'
-#' @source research grants 100013-115948/1 and 100014-115948 from the Swiss National Science Foundation.
+#' @source data: research grants 100013-115948/1 and 100014-115948 from the Swiss National Science Foundation.
 #'
 #' @references
 #'

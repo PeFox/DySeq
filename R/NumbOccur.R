@@ -4,9 +4,10 @@
 #'
 #'
 #'@param x Dataframe or matix containing one sequence per row
-#'@param y The value of interest
+#'@param y single integer: represents the occurence that should be counted
 #'@param t optional vector that contains the lengths of sequences
-#'@param prop if TRUE: proportion will be computed, if FALSE: sum will be computed
+#'@param prop if TRUE: proportion will be computed,
+#'if FALSE: sum will be computed
 #'
 #'@return returns a vector containing containing the number of occurences.
 #'
@@ -35,7 +36,7 @@
 #'
 #'@export
 
-
+help(CouplesCope)
 NumbOccur<-function(x,y,t=NA, prop=TRUE){
   if(!(is.matrix(x)||is.data.frame(x))) warning("x must be a matrix or dataframe!")
   if(!(is.numeric(t)||is.na(t))) warning("t must be NA or a vector with number elements equal number sequences")
