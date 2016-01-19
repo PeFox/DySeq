@@ -1,6 +1,8 @@
 #'EstFreq
 #'
-#'Simulate number low freq or zero frequencies for a state-transition table dependend ont the number of time points
+#'Simulate number low freq or zero frequencies 
+#'for a state-transition table dependend on
+#'the number of time points
 #'
 #'
 #'@param x a matrix containing the assumed probabilities for the expected transition tables
@@ -9,10 +11,13 @@
 #'@param min.cell a single integer defines what counts as a low frequency (5 by convention)
 #'
 #'
-#'@details First for entrys represent the first column, fith to eights entry the second column
-#'
-#'
-#'
+#'@details the matrix must have 2*4 dimensions
+#'@details first column represents if behavior of interest is shown
+#'@details Second column represents if behavior of interest is not shown
+#'@details first row: behavior of interest of both partners was shown
+#'@details second row: behavior of interest was shown only by the partner 
+#'@details third row: behavior of interest was shown only by the actor 
+#'@details second row: behavior of interest was not shown 
 #'
 #'
 #'
