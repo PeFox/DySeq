@@ -20,9 +20,17 @@
 #'
 #'data(CouplesCope)
 #'my.s<-StateExpand(CouplesCope, 2:49, 50:97)
-#'StateTrans(my.s) # First sequence is dependend variable (what behavior preceeds stress signals?)
-#'StateTrans(my.s, FALSE) # Second sequence is dependend variable (what behavior preceeds dyadic coping signals?)
-#'StateTrans(my.s, FALSE)[[41]] # investigating a single case
+#'
+#'# First sequence is dependend variable 
+#'# - what behavior preceeds stress signals?
+#'StateTrans(my.s) 
+#'
+#'# Second sequence is dependend variable 
+#'# - what behavior preceeds dyadic coping signals?
+#'StateTrans(my.s, FALSE) 
+#'
+#'# investigating a single case
+#'StateTrans(my.s, FALSE)[[41]] 
 #'
 #'@export
 

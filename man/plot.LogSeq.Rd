@@ -4,10 +4,14 @@
 \alias{plot.LogSeq}
 \title{plot.LogSeq}
 \usage{
-\method{plot}{LogSeq}(x)
+\method{plot}{LogSeq}(x, y, ...)
 }
 \arguments{
-\item{x}{a LogSeq object, that should be printed}
+\item{x}{a LogSeq object, that should be printed.}
+
+\item{y}{further arguments passed to or from other methods.}
+
+\item{...}{further arguments passed to or from other methods.}
 }
 \description{
 Generates interaction diagram for LogSeq Objects

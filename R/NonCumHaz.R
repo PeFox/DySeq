@@ -14,19 +14,19 @@
 #'cumhaz<-c(0.2 ,0.21 ,0.31 ,0.44 ,1.1  ,1.1  ,1.12 ,1.2)
 #'time<-c(4     ,5    ,6    ,7    ,10   ,14   ,15   ,16)
 #'
-#'NonCumHaz(cumhaz, time, plot=T)
+#'NonCumHaz(cumhaz, time, plot=TRUE)
 #'
 #'
 #'
 #'# Example 2: Every hazard entry represents one point of time
 #'
 #'# if every hazard entry repesents one point of time
-#' NonCumHaz(cumhaz, 1:8, plot=T)
+#' NonCumHaz(cumhaz, 1:8, plot=TRUE)
 #'
 #'
 #'
 #'# Example 3: real data and real researchquestion
-#'# install.packages("survival")
+#'\dontrun{#install.packages("survival") 
 #'library(survival)
 #'
 #'# How long till the last stress signal
@@ -36,19 +36,19 @@
 #'# stress did not end till the observation duration
 #'event<-rep(1,length(my.last))
 #'event[my.last==48]<-0
-
-# Coxregression
+#'
+#' # Coxregression
 #'my.surv<-Surv(my.last,event) # creates a object for survival time analysis
 #'my.fit<-survfit(coxph(my.surv~1)) # fits coxregression without covariates on the data
-
+#'
 #'plot(my.fit) # survival curve
 #'plot(my.fit, fun="cumhaz") # cumulated survival curve
-
-# Different uses for NonCumHaz
-#'NonCumHaz(my.fit, plot=T)
-#'NonCumHaz(my.fit$cumhaz, my.fit$time, plot=T) # if over packages than 'survival'are used
-
-
+#'
+#' # Different uses for NonCumHaz
+#'NonCumHaz(my.fit, plot=TRUE)
+#'NonCumHaz(my.fit$cumhaz, my.fit$time, plot=TRUE) # if over packages than 'survival'are used
+#'}
+#'
 #'@export
 
 

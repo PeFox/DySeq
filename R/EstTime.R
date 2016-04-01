@@ -21,17 +21,15 @@
 #'@return EstTime object; a list of three vectors
 #'if printed, provides a plot of expected number of low and zero cell frequencies
 #'
-#'@details First vector represents time points, 
-#'second vector provides rel. frequency of cases with zero's, 
-#'third vector rel. frequency of cases with low cell frequencies
-#'
+#'@details First vector represents time points, second vector provides rel. frequency of cases with zero's, third vector rel. frequency of cases with low cell frequencies.
 #'
 #'
 #'@examples
+#'\dontrun{
 #'my.trans.table<-matrix(c(0.57, 0.13,0.05,0.05,0.05, 0.05,0.05,0.05),4,2)
 #'my.cellproblems<-EstTime(my.trans.table, k=500) # low k only for examplification purposes!
 #'my.cellproblems
-#'
+#'}
 #'@export
 
 

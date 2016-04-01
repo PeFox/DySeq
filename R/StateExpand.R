@@ -4,8 +4,8 @@
 #'(combines two corresponding sequences into one for every row of a dataframe)
 #'
 #'@param x Dataframe or matix containing the sequences that should be combined
-#'@param seq1 a vector that indicates all columns of the first sequence
-#'@param seq2 a vector that indicates all columns of the second sequence
+#'@param pos1 a vector that indicates all columns of the first sequence
+#'@param pos2 a vector that indicates all columns of the second sequence
 #'@param replace.na an integer that is used for replacement or if FALSE, no replacement will take place
 #'
 #'@return returns a matrix with the combined sequences. 
@@ -46,28 +46,40 @@
 #'
 #'  # Example 2: with NA replacement
 #'  data(CouplesCope)
-#'  na.CouplesCope<-CouplesCope # copy the example data
-#'  na.CouplesCope[matrix(sample(c(T, rep(F,9)),64*97, T), 64, 97)]<-NA # fill it with 10% NA's
+#'  
+#'  # copy part of the example data
+#'  # excluding code and EDCm for simplification
+#'  na.CouplesCope<-CouplesCope[,2:97] 
+#'  
+#'    
+#'  # fill it with 10% NA's as an example:
+#'  na.CouplesCope[matrix(sample(c(TRUE, rep(FALSE,9)),64*96, TRUE), 64, 96)]<-NA 
 #'  na.CouplesCope[1:5,] # inspect the first 5 cases
-#'
-#'  my.expand<-StateExpand(na.CouplesCope, 2:49, 50:97, 0) # combine states and fill NA's with zeros!
+#'  
+#'  # demonstrate na.replace: combine states and fill NA's with zeros!
+#'  my.expand<-StateExpand(na.CouplesCope, 1:48, 49:96, replace.na=0) 
 #'  my.expand[1:5,] # inspect the first 5 cases
 #'
 #'
 #'
-#'  # Example 3: Use StateExpand for further analyis or plotting using the Package TraMineR
-#'
+#'\dontrun{
+#'  # Example 3: Use StateExpand for further analyis 
+#'  #            or plotting using the Package TraMineR
+#'               
 #'  # install.packages("TraMineR") # install "TraMineR" for graphical analysis
 #'  library(TraMineR) #load TraMineR
 #'
 #'  my.expand<-StateExpand(CouplesCope, 2:49, 50:97) # create combined sequences
 #'
-#'  couple.labels <-c("no reaction", "stress only", "coping only", "both reactions")  # create labels for plot
-#'  couple.seq <- seqdef(my.expand, labels = couple.labels) # create a sequence object (the way TraMineR represents sequences)
+#'  # create labels for plot
+#'  couple.labels <-c("no reaction", "stress only", "coping only", "both reactions")  
+#'  
+#'  # create a sequence object (the way TraMineR represents sequences)
+#'  couple.seq <- seqdef(my.expand, labels = couple.labels) 
 #'  seqdplot(couple.seq)
 #'
 #'  detach(TraMineR) # unloading TraMineR
-#'
+#'}
 #'@export
 
 

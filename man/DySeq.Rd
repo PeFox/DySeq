@@ -1,8 +1,11 @@
+\docType{package}
 \name{DySeq}
 \alias{DySeq}
-\title{DySeq}
-
+\alias{DySeq-package}
+\title{DySeq Overview}
+\description{A collection of functions for dyadic sequence anaylses.}
 \details{
-  For an overview of all function in this packages click below on 'index'
+  DySeq provides an implementation of Bakeman & Gottman's (1997) approach of aggregated logit models, see help(LogSeq). And some additional functions for data preparation. 
 }
-
+\author{Peter Fuchs}
+\keyword{package}

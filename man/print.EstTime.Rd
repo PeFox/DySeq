@@ -4,12 +4,14 @@
 \alias{print.EstTime}
 \title{print.EstTime}
 \usage{
-\method{print}{EstTime}(x, pos = NA)
+\method{print}{EstTime}(x, pos = NA, ...)
 }
 \arguments{
 \item{x}{a EstTime object, printing it will result in a frequency plot. See help(EstTime)}
 
 \item{pos}{position of legend}
+
+\item{...}{further arguments passed to or from other methods.}
 }
 \description{
 Generates output for EstTime object

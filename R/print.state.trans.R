@@ -4,10 +4,11 @@
 #'
 #'
 #'@param x a state.trans object, that should be printed
+#'@param ... further arguments passed to or from other methods.
 #'@export
 
 
-print.state.trans<-function(x){
+print.state.trans<-function(x, ...){
 
 
 

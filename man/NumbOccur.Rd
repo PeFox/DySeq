@@ -9,11 +9,11 @@ NumbOccur(x, y, t = NA, prop = TRUE)
 \arguments{
 \item{x}{Dataframe or matix containing one sequence per row}
 
-\item{y}{The value of interest}
+\item{y}{single integer: represents the occurence that should be counted}
 
 \item{t}{optional vector that contains the lengths of sequences}
 
-\item{prop}{if TRUE: proportion will be computed, if FALSE: sum will be computed}
+\item{prop}{if TRUE: proportion will be computed,if FALSE: sum will be computed}
 }
 \value{
 returns a vector containing containing the number of occurences.
@@ -32,7 +32,7 @@ my.data<-rbind(seq1,seq2,seq3)
 
 # Determine the proportion of ones in my.data
 NumbOccur(my.data,1)
-NumbOccur(my.data,1, prop=F) # compute absolute frequencies
+NumbOccur(my.data,1, prop=FALSE) # compute absolute frequencies
 
 
 # Example 2: Real data dyadic sequences

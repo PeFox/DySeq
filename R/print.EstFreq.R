@@ -4,10 +4,11 @@
 #'
 #'
 #'@param x a EstFrag object, that should be printed. See help(EstFreq)
+#'@param ... further arguments passed to or from other methods.
 #'@export
 
 
-print.EstFreq<-function(x){
+print.EstFreq<-function(x, ...){
 
   if(!(class(x)=="EstFreq")) warning("x should be a  EstFreq object!")
 

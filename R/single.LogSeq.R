@@ -3,26 +3,26 @@
 #'prints estimates vor single case out of an LogSeq object
 #'
 #'
-#'@param x a LogSeq object, that should be printed
+#'@param x a LogSeq object, that should be printed.
+#'@param case determines which case should be shown.
 #'
 #'@examples
 #'data(CouplesCope)
 #'my.states<-StateExpand(CouplesCope, 2:49, 50:97)
-#'my.trans<-StateTrans(my.states, F)
+#'my.trans<-StateTrans(my.states, FALSE)
 #'my.logseq<-LogSeq(my.trans)
 #'my.logseq
-#'
 #'single.LogSeq(my.logseq, 41)
 #'
 #'@export
 
 single.LogSeq<-function(x, case){
 
-  beta<-c(my.logseq[[1]][case,1], my.logseq[[1]][case,3],my.logseq[[1]][case,2], my.logseq[[1]][case,4])
+  beta<-c(x[[1]][case,1], x[[1]][case,3],x[[1]][case,2], x[[1]][case,4])
 
   exp_beta<-exp(beta)
 
-  p.value<-c(c(my.logseq[[4]][case,1], my.logseq[[4]][case,3],my.logseq[[4]][case,2], my.logseq[[4]][case,4]))
+  p.value<-c(c(x[[4]][case,1], x[[4]][case,3],x[[4]][case,2], x[[4]][case,4]))
 
   output_seq<-cbind(beta,exp_beta, p.value)
   rownames(output_seq)<-c("intercept","actor","partner","interac")

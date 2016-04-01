@@ -9,9 +9,11 @@ LogSeq(x, delta = 0.5, subgroups = NA, single.case = FALSE)
 \arguments{
 \item{x}{a state.trans object or a list of 4*2 state-transition tables}
 
-\item{delta}{a constant added to every cell, required if zero frequencies occur!}
+\item{delta}{constant added to every cell, required if zero frequencies occur!}
 
 \item{subgroups}{an optional vector containing groupmembership if estimates should be compared between groups}
+
+\item{single.case}{should p-values be computed for single case analysis}
 }
 \description{
 Implementation of Bakeman & Gottman (1997) for sequence analysis
@@ -20,9 +22,11 @@ Kenny, Kashy & Cook (2006) provide further examples.
 \examples{
 data(CouplesCope)
 my.states<-StateExpand(CouplesCope, 2:49, 50:97)
-my.trans<-StateTrans(my.states, F)
+my.trans<-StateTrans(my.states, FALSE)
 my.logseq<-LogSeq(my.trans)
 my.logseq
+
+plot(my.logseq) # interaction can be plotted
 
 single.LogSeq(my.logseq, 41) # for single case analysis
 

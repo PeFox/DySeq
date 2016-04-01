@@ -12,7 +12,8 @@ LastOccur(x, y)
 \item{y}{The value of interest}
 }
 \value{
-returns a vector containing containing for every row the index of the las occurence.
+returns a vector containing the index of the last 
+event occurence for every row.
 }
 \description{
 Returns index of last occurence
@@ -20,10 +21,10 @@ Returns index of last occurence
 \examples{
 # Example 1: Small artificial data
 
- my.data<-matrix(c(1,0,1,1,+
-                   0,0,1,0,+
-                   1,0,0,0,+
-                   0,0,0,1),4,4, T) # create data
+ my.data<-matrix(c(1,0,1,1,
+                   0,0,1,0,
+                   1,0,0,0,
+                   0,0,0,1),4,4, TRUE) # create data
 
  my.data # inspect sampe data
  LastOccur(my.data,1) # last Occurence of one

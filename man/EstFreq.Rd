@@ -16,18 +16,33 @@ EstFreq(x, t, min.cell = 5, k = 20000)
 \item{k}{Number of simulations (at least 20.000 is recommended)}
 }
 \description{
-Simulate number low freq or zero frequencies for a state-transition table dependend ont the number of time points
+Simulate number low freq or zero frequencies 
+for a state-transition table dependend on
+the number of time points
 }
 \details{
-First for entrys represent the first column, fith to eights entry the second column
+the matrix must have 2*4 dimensions
+
+first column represents if behavior of interest is shown
+
+Second column represents if behavior of interest is not shown
+
+first row: behavior of interest of both partners was shown
+
+second row: behavior of interest was shown only by the partner
+
+third row: behavior of interest was shown only by the actor
+
+second row: behavior of interest was not shown
 }
 \examples{
+\dontrun{
 my.trans.table<-matrix(c(0.57, 0.13,0.05,0.05,0.05, 0.05,0.05,0.05),4,2)
 
 my.cellproblems<-EstFreq(my.trans.table, 100, 5, k=20000)
 
 my.cellproblems
-
+}
 
 }
 

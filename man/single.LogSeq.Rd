@@ -7,7 +7,9 @@
 single.LogSeq(x, case)
 }
 \arguments{
-\item{x}{a LogSeq object, that should be printed}
+\item{x}{a LogSeq object, that should be printed.}
+
+\item{case}{determines which case should be shown.}
 }
 \description{
 prints estimates vor single case out of an LogSeq object
@@ -15,10 +17,9 @@ prints estimates vor single case out of an LogSeq object
 \examples{
 data(CouplesCope)
 my.states<-StateExpand(CouplesCope, 2:49, 50:97)
-my.trans<-StateTrans(my.states, F)
+my.trans<-StateTrans(my.states, FALSE)
 my.logseq<-LogSeq(my.trans)
 my.logseq
-
 single.LogSeq(my.logseq, 41)
 
 }

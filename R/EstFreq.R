@@ -22,12 +22,13 @@
 #'
 #'
 #'@examples
+#'\dontrun{
 #'my.trans.table<-matrix(c(0.57, 0.13,0.05,0.05,0.05, 0.05,0.05,0.05),4,2)
 #'
 #'my.cellproblems<-EstFreq(my.trans.table, 100, 5, k=20000)
 #'
 #'my.cellproblems
-#'
+#'}
 #'
 #'@export
 

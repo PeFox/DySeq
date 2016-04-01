@@ -6,8 +6,8 @@
 #'@param x Dataframe or matix containing one sequence per row
 #'@param y single integer: represents the occurence that should be counted
 #'@param t optional vector that contains the lengths of sequences
-#'@param prop if TRUE: proportion will be computed,
-#'if FALSE: sum will be computed
+#'@param prop if TRUE: proportion will be computed,if FALSE: sum will be computed
+#'
 #'
 #'@return returns a vector containing containing the number of occurences.
 #'
@@ -24,7 +24,7 @@
 #'
 #'# Determine the proportion of ones in my.data
 #'NumbOccur(my.data,1)
-#'NumbOccur(my.data,1, prop=F) # compute absolute frequencies
+#'NumbOccur(my.data,1, prop=FALSE) # compute absolute frequencies
 #'
 #'
 #'# Example 2: Real data dyadic sequences
@@ -36,7 +36,7 @@
 #'
 #'@export
 
-help(CouplesCope)
+
 NumbOccur<-function(x,y,t=NA, prop=TRUE){
   if(!(is.matrix(x)||is.data.frame(x))) warning("x must be a matrix or dataframe!")
   if(!(is.numeric(t)||is.na(t))) warning("t must be NA or a vector with number elements equal number sequences")

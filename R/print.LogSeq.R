@@ -4,9 +4,11 @@
 #'
 #'
 #'@param x a LogSeq object, that should be printed
+#'@param ... further arguments passed to or from other methods.
 #'@export
 
-print.LogSeq<-function(x){
+
+print.LogSeq<-function(x, ...){
   if(class(x)!="LogSeq") warning("x should be a LogSeq object!")
 
   if(length(x[[3]])==1){

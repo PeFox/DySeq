@@ -13,10 +13,10 @@
 #'@examples
 #'# Example 1: Small artificial data
 #'
-#'  my.data<-matrix(c(1,0,1,1,+
-#'                    0,0,1,0,+
-#'                    1,0,0,0,+
-#'                    0,0,0,1),4,4, T) # create data
+#'  my.data<-matrix(c(1,0,1,1,
+#'                    0,0,1,0,
+#'                    1,0,0,0,
+#'                    0,0,0,1),4,4, TRUE) # create data
 #'
 #'  my.data # inspect sampe data
 #'  LastOccur(my.data,1) # last Occurence of one
@@ -45,7 +45,5 @@ LastOccur<-function(x,y){
 }
 
 
-
-
-
+  
 

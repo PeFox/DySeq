@@ -4,10 +4,12 @@
 \alias{print.state.trans}
 \title{print.state.trans}
 \usage{
-\method{print}{state.trans}(x)
+\method{print}{state.trans}(x, ...)
 }
 \arguments{
 \item{x}{a state.trans object, that should be printed}
+
+\item{...}{further arguments passed to or from other methods.}
 }
 \description{
 Generates output for state.trans object

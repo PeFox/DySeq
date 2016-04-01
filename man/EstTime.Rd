@@ -8,19 +8,22 @@ EstTime(x, t = NA, crit = 0.05, zero = T, min.cell = 5, k = 20000,
   pos = "bottomleft", smoothed = T, show.it = 10, max.it = 10000)
 }
 \arguments{
-\item{x}{a matrix containing the assumed probabilities for the expected transition tables}
+\item{x}{a matrix containing the assumed probabilities (see EstFreq for further detail!)}
 
-\item{t}{optinol: a vector of time intervalls for which frequencies should be simulated}
+\item{t}{optional: a vector of time intervalls for which frequencies should be simulated}
 
-\item{crit}{optional, but must be sepcified is t is not: Simulations will end if zero frequencies are less than crit}
+\item{crit}{optional: but must be sepcified if t is not; 
+Simulations will end if the relative frequency of zero cells is less than crit}
 
-\item{zero}{optional: if FALSE Simulations will end if number of low frequency problems is less than crit}
+\item{zero}{optional: if FALSE simulations will end if number of low frequencies 
+(instead of zero frequencies) is less than crit}
 
 \item{min.cell}{a single integer defines what counts as a low frequency (5 by convention)}
 
 \item{k}{Number of simulations (at least 20.000 is recommended)}
 
-\item{pos}{position of the outputs legend. Options are: "bottomleft", "bottomright", "upperleft", and "upperright".}
+\item{pos}{position of the output's legend. 
+Options are: "bottomleft", "bottomright", "upperleft", and "upperright".}
 
 \item{smoothed}{logical value. If true, outputlines will be smoothed!}
 
@@ -29,16 +32,21 @@ EstTime(x, t = NA, crit = 0.05, zero = T, min.cell = 5, k = 20000,
 \item{max.it}{single integer that defines the maximum number of iterations if t is not specified.}
 }
 \value{
-a EstTime object; a list of three vectors that will, if printed, provide a plot of expected number of low and zero cell frequencies
+EstTime object; a list of three vectors
+if printed, provides a plot of expected number of low and zero cell frequencies
 }
 \description{
-Plots simulated number low freq or zero frequencies for a state-transition table against the number of time points
+Simulates number of low or zero frequencies for a state-transition table
+and plots these against the number of time points/intervalls
 }
 \details{
-First vector represents time points, second frequency of cases with zero's, thrid frequency of cases with low cell frequencies
+First vector represents time points, second vector provides rel. frequency of cases with zero's, third vector rel. frequency of cases with low cell frequencies.
 }
 \examples{
-
-
+\dontrun{
+my.trans.table<-matrix(c(0.57, 0.13,0.05,0.05,0.05, 0.05,0.05,0.05),4,2)
+my.cellproblems<-EstTime(my.trans.table, k=500) # low k only for examplification purposes!
+my.cellproblems
+}
 }
 

@@ -4,27 +4,34 @@
 \name{CouplesCope}
 \alias{CouplesCope}
 \title{Dyadic sequences of 64 heterosexual couples}
-\format{A data frame with 64 rows and 97 variables:
-\describe{
-\item{code}{ID variable}
-\item{IKCB...}{Was stress communication shown in the following time intervall (...)}
-\item{DCCB...}{Was dyadic coping shown in the following time intervall (...)}
-}}
+\format{A data frame with 64 rows and 98 variables:}
 \source{
-research grants 100013-115948/1 and 100014-115948 from the Swiss National Science Foundation.
+data: research grants 100013-115948/1 and 100014-115948 from the Swiss National Science Foundation.
 }
 \usage{
 CouplesCope
 }
 \description{
-Stress was/induced via TSST (TSST; Kirschbaum et al 1993).
-This data contains only the cases where females were stressed.
 First variable is an ID variable.
-After that two sequences of 48 time intervals follow.
-First sequence (2:49) represents if dyadic coping was shown,
-that is if the male partner supports the coping efforts of the other.
-Second sequence (50:97) represent if stress was communicated
-by the female partner.
+The following show if dyadic coping was shown 
+by the male partner (columns 2:49)
+Columns 50:97 show if stress was communicated by
+the female parter. 
+Every column represents a time interval of 10 sec. 
+Prior to the first interval Stress was/induced via TSST 
+(TSST; Kirschbaum et al 1993).
+}
+\details{
+This is just an excerpt of the original study in which
+one or both partners were stressed via the TSST.
+This data contains only the cases in whichs the female
+partner was stressed.
+
+Variables: 
+code:            ID variable
+IKCB01-IKCB48:   Was stress communication (SC) shown in the time intervalls 1-48?
+DCCB01-DCCB48:   Was dyadic coping (DC) shown in the time intervalls 1-48? 
+EDCm:            Men's self-assessed dyadic coping ability
 }
 \references{
 for TSST:

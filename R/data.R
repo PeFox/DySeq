@@ -13,14 +13,14 @@
 #' one or both partners were stressed via the TSST.
 #' This data contains only the cases in whichs the female
 #' partner was stressed.
-#'
-#' @format A data frame with 64 rows and 97 variables:
-#' \describe{
-#' \item{code}{ID variable}
-#' \item{IKCB...}{Was stress communication shown in the following time intervall? (...)}
-#' \item{DCCB...}{Was dyadic coping shown in the following time intervall? (...)}
-#' }
-#'
+#' 
+#' Variables: 
+#' code:            ID variable
+#' IKCB01-IKCB48:   Was stress communication (SC) shown in the time intervalls 1-48?
+#' DCCB01-DCCB48:   Was dyadic coping (DC) shown in the time intervalls 1-48? 
+#' EDCm:            Men's self-assessed dyadic coping ability
+#' @format A data frame with 64 rows and 98 variables:
+#' 
 #' @source data: research grants 100013-115948/1 and 100014-115948 from the Swiss National Science Foundation.
 #'
 #' @references
@@ -31,5 +31,5 @@
 #' On the topic of dyadic coping:
 #' Bodenmann, G. (1995). A systemic-transactional conceptualization of stress and coping in couples. Swiss Journal of Psychology.
 #'
-"CouplesCope"
+'CouplesCope'
 

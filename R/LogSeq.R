@@ -7,6 +7,7 @@
 #'@param x a state.trans object or a list of 4*2 state-transition tables
 #'@param delta constant added to every cell, required if zero frequencies occur!
 #'@param subgroups an optional vector containing groupmembership if estimates should be compared between groups
+#'@param single.case should p-values be computed for single case analysis
 #'
 #'@references
 #'  Bakeman, R., & Gottman, J. M. (1997). Observing interaction: An introduction to sequential analysis. Cambridge university press.
@@ -19,7 +20,7 @@
 #'@examples
 #'data(CouplesCope)
 #'my.states<-StateExpand(CouplesCope, 2:49, 50:97)
-#'my.trans<-StateTrans(my.states, F)
+#'my.trans<-StateTrans(my.states, FALSE)
 #'my.logseq<-LogSeq(my.trans)
 #'my.logseq
 #'
@@ -34,8 +35,6 @@ LogSeq<-function(x, delta=0.5, subgroups=NA, single.case=FALSE){
 
   if(class(x)[2]!="state.trans") warning("x should be a state.trans object. See Help(StateTrans)!")
 
-  require("gmodels")
-  require("MASS")
 
   lambdas<-matrix(NA, length(x),4) # Empty table for lambdas
 
@@ -47,12 +46,12 @@ LogSeq<-function(x, delta=0.5, subgroups=NA, single.case=FALSE){
 
     casearray<-array(x.long, c(2,2,2), list(c("seq2_1", "seq2_0"),c("seq1_1","seq2_0"), c("dep1","dep0")))
 
-    caselog<-loglm(~1+2+3+1*2*3, data=(casearray+delta), fit=F)
+    caselog<-MASS::loglm(~1+2+3+1*2*3, data=(casearray+delta), fit=F)
 
     if(single.case==TRUE){
-      caselog.b1<-loglm(~1+2+3+2*3,1*2, data=(casearray+delta), fit=F)
-      caselog.b2<-loglm(~1+2+3+1*3+2*3, data=(casearray+delta), fit=F)
-      caselog.b3<-loglm(~1+2+3+2*3+1*3+1*2, data=(casearray+delta), fit=F)
+      caselog.b1<-MASS::loglm(~1+2+3+2*3,1*2, data=(casearray+delta), fit=F)
+      caselog.b2<-MASS::loglm(~1+2+3+1*3+2*3, data=(casearray+delta), fit=F)
+      caselog.b3<-MASS::loglm(~1+2+3+2*3+1*3+1*2, data=(casearray+delta), fit=F)
 
       p1<-anova(caselog.b1,caselog.b3)[2,5]
       p2<-anova(caselog.b2,caselog.b3)[2,5]

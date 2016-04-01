@@ -8,18 +8,18 @@ StateTrans(x, first = TRUE, dep.lab = c("1", "0"), indep.lab = c("1-1",
   "1-0", "0-1", "0-0"))
 }
 \arguments{
-\item{x}{x Dataframe or matix containing combined sequences, see help(StateExpand)}
+\item{x}{Dataframe or matix containing combined sequences, see help(StateExpand)}
 
-\item{first}{a logical value indicating if the first sequence should used as dependend variable (TRUE) or the second (FALSE)}
+\item{first}{logical value indicating if the first sequence should used as dependend variable (TRUE) or the second (FALSE)}
 
-\item{dep.lab}{a two-element string vector with labels dependend variable (first level zero, second corresponds to level one)}
+\item{dep.lab}{two-element string vector with labels for dependend variable (first entry corresponds to the value zero, the second to one)}
 
-\item{indep.lab}{a four-element string vector with labels for the combined variable (order is correspondung to the order of the StateExpand function)}
+\item{indep.lab}{four-element string vector with labels for the combined variable (order corresponds to the order of the StateExpand function)}
 }
 \description{
-Produces state transition tables for dyadic binary sequences.
-For an extensive overvie see Kenny, Kashy and Cook (2006).
-The original idea stems (as far as known) from Bakeman and Gottman (1997).
+Produces a state transition table for dyadic binary sequences.
+For an extensive overview see Kenny, Kashy and Cook (2006).
+The original idea stems from (as far as known) Bakeman and Gottman (1997).
 }
 \examples{
 
@@ -27,9 +27,17 @@ The original idea stems (as far as known) from Bakeman and Gottman (1997).
 
 data(CouplesCope)
 my.s<-StateExpand(CouplesCope, 2:49, 50:97)
-StateTrans(my.s) # First sequence is dependend variable (what behavior preceeds stress signals?)
-StateTrans(my.s, FALSE) # Second sequence is dependend variable (what behavior preceeds dyadic coping signals?)
-StateTrans(my.s, FALSE)[[41]] # investigating a single case
+
+# First sequence is dependend variable 
+# - what behavior preceeds stress signals?
+StateTrans(my.s) 
+
+# Second sequence is dependend variable 
+# - what behavior preceeds dyadic coping signals?
+StateTrans(my.s, FALSE) 
+
+# investigating a single case
+StateTrans(my.s, FALSE)[[41]] 
 
 }
 \references{

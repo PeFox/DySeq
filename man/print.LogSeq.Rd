@@ -4,10 +4,12 @@
 \alias{print.LogSeq}
 \title{print.LogSeq}
 \usage{
-\method{print}{LogSeq}(x)
+\method{print}{LogSeq}(x, ...)
 }
 \arguments{
 \item{x}{a LogSeq object, that should be printed}
+
+\item{...}{further arguments passed to or from other methods.}
 }
 \description{
 Generates output for LogSeq Objects

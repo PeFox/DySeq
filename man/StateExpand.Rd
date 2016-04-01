@@ -9,14 +9,14 @@ StateExpand(x, pos1, pos2, replace.na = FALSE)
 \arguments{
 \item{x}{Dataframe or matix containing the sequences that should be combined}
 
+\item{pos1}{a vector that indicates all columns of the first sequence}
+
+\item{pos2}{a vector that indicates all columns of the second sequence}
+
 \item{replace.na}{an integer that is used for replacement or if FALSE, no replacement will take place}
-
-\item{seq1}{a vector that indicates all columns of the first sequence}
-
-\item{seq2}{a vector that indicates all columns of the second sequence}
 }
 \value{
-returns a matrix with the combined sequences. Columns keep their names.
+returns a matrix with the combined sequences.
 }
 \description{
 Transforms dyadic binary data into state-expand-sequences
@@ -39,9 +39,8 @@ Takes a dataframe or matrix with dyadic binary data in wide data format, that is
 
 .... use:
 - Most packages are only suited for univariat sequence analysis.
- By this tranformation other
-- state-expand-sequences is needed for some of the other functions
- of this package. If it is, it will be mentioned in the functions documentation.
+- This function transforms dyadic dequences into univariate sequences.
+- state-expand-sequences are needed for some of the other functions of this package.
 }
 \examples{
  # Example 1
@@ -55,28 +54,40 @@ Takes a dataframe or matrix with dyadic binary data in wide data format, that is
 
  # Example 2: with NA replacement
  data(CouplesCope)
- na.CouplesCope<-CouplesCope # copy the example data
- na.CouplesCope[matrix(sample(c(T, rep(F,9)),64*97, T), 64, 97)]<-NA # fill it with 10\% NA's
+ 
+ # copy part of the example data
+ # excluding code and EDCm for simplification
+ na.CouplesCope<-CouplesCope[,2:97] 
+ 
+   
+ # fill it with 10\% NA's as an example:
+ na.CouplesCope[matrix(sample(c(TRUE, rep(FALSE,9)),64*96, TRUE), 64, 96)]<-NA 
  na.CouplesCope[1:5,] # inspect the first 5 cases
-
- my.expand<-StateExpand(na.CouplesCope, 2:49, 50:97, 0) # combine states and fill NA's with zeros!
+ 
+ # demonstrate na.replace: combine states and fill NA's with zeros!
+ my.expand<-StateExpand(na.CouplesCope, 1:48, 49:96, replace.na=0) 
  my.expand[1:5,] # inspect the first 5 cases
 
 
 
- # Example 3: Use StateExpand for further analyis or plotting using the Package TraMineR
-
+\dontrun{
+ # Example 3: Use StateExpand for further analyis 
+ #            or plotting using the Package TraMineR
+              
  # install.packages("TraMineR") # install "TraMineR" for graphical analysis
  library(TraMineR) #load TraMineR
 
  my.expand<-StateExpand(CouplesCope, 2:49, 50:97) # create combined sequences
 
- couple.labels <-c("no reaction", "stress only", "coping only", "both reactions")  # create labels for plot
- couple.seq <- seqdef(my.expand, labels = couple.labels) # create a sequence object (the way TraMineR represents sequences)
+ # create labels for plot
+ couple.labels <-c("no reaction", "stress only", "coping only", "both reactions")  
+ 
+ # create a sequence object (the way TraMineR represents sequences)
+ couple.seq <- seqdef(my.expand, labels = couple.labels) 
  seqdplot(couple.seq)
 
  detach(TraMineR) # unloading TraMineR
-
+}
 }
 \references{
 Bakeman, R., & Gottman, J. M. (1997). Observing interaction: An introduction to sequential analysis. Cambridge university press.

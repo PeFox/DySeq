@@ -3,11 +3,13 @@
 #'Generates interaction diagram for LogSeq Objects
 #'
 #'#'
-#'@param x a LogSeq object, that should be printed
+#'@param x a LogSeq object, that should be printed.
+#'@param y further arguments passed to or from other methods.
+#'@param ... further arguments passed to or from other methods.
 #'
 #'@export
 
-plot.LogSeq<-function(x){
+plot.LogSeq<-function(x, y, ...){
   if(class(x)!="LogSeq") warning("x should be a LogSeq object!")
 
   lambdas<-x[[1]]

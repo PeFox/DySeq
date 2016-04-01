@@ -4,10 +4,12 @@
 \alias{print.EstFreq}
 \title{print.state.trans}
 \usage{
-\method{print}{EstFreq}(x)
+\method{print}{EstFreq}(x, ...)
 }
 \arguments{
 \item{x}{a EstFrag object, that should be printed. See help(EstFreq)}
+
+\item{...}{further arguments passed to or from other methods.}
 }
 \description{
 Generates output for EstFrag object
