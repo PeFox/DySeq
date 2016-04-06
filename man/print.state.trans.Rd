@@ -12,6 +12,6 @@
 \item{...}{further arguments passed to or from other methods.}
 }
 \description{
-Generates output for state.trans object
+Generates output for state.trans object, see: \code{\link{StateTrans}}
 }
 

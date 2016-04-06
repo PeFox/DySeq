@@ -16,8 +16,16 @@ LogSeq(x, delta = 0.5, subgroups = NA, single.case = FALSE)
 \item{single.case}{should p-values be computed for single case analysis}
 }
 \description{
-Implementation of Bakeman & Gottman (1997) for sequence analysis
+Implementation of Bakeman & Gottman (1997) for sequence analysis.
 Kenny, Kashy & Cook (2006) provide further examples.
+}
+\details{
+\itemize{
+\item Runs logit models over a multiple number of state-transition tables, see: \code{\link{StateTrans}} 
+\item Aggregates coefficients of all logit models and tests them against zero. 
+\item If subgroups are defined, coefficients are tested to be different between groups.
+\item Print-function displays mean logit-coefficients and p-values. 
+}
 }
 \examples{
 data(CouplesCope)

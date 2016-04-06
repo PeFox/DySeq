@@ -9,11 +9,11 @@
 \arguments{
 \item{x}{a EstTime object, printing it will result in a frequency plot. See help(EstTime)}
 
-\item{pos}{position of legend}
+\item{pos}{position of legend, same arguments avaible as in the argument pos from the plot() function.}
 
 \item{...}{further arguments passed to or from other methods.}
 }
 \description{
-Generates output for EstTime object
+Generates output for EstTime object, see: \code{\link{EstTime}}
 }
 

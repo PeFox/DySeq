@@ -1,10 +1,10 @@
 #'print.EstTime
 #'
-#'Generates output for EstTime object
+#'Generates output for EstTime object, see: \code{\link{EstTime}}
 #'
 #'
 #'@param x a EstTime object, printing it will result in a frequency plot. See help(EstTime)
-#'@param pos position of legend
+#'@param pos position of legend, same arguments avaible as in the argument pos from the plot() function.
 #'@param ... further arguments passed to or from other methods.
 #'@export
 

@@ -1,6 +1,6 @@
 #'print.state.trans
 #'
-#'Generates output for EstFrag object
+#'Generates output for EstFrag object, see: \code{\link{EstFreq}}
 #'
 #'
 #'@param x a EstFrag object, that should be printed. See help(EstFreq)

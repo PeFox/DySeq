@@ -1,7 +1,8 @@
 #'LastOccur
 #'
-#'Returns index of last occurence 
-#'
+#'Returns index of last occurence: Each row is scanned for the last column in which a certain integer is shown. 
+#'Consider the following example: one row has the values 1-2-2-1-0-4, last occurence of 0 would be the fith column,
+#'last occurence of 1 would be the forth column, and so on.  
 #'
 #'@param x Dataframe or matix containing one sequence per row
 #'@param y The value of interest

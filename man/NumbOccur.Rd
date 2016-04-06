@@ -19,7 +19,8 @@ NumbOccur(x, y, t = NA, prop = TRUE)
 returns a vector containing containing the number of occurences.
 }
 \description{
-Returns the Number of occurences for sequences with different lenghts
+Returns the Number of occurences for sequences with different lenghts.
+Outside the context of sequence analysis this means that for each frequency of one specifics integer will be computed.
 }
 \examples{
 # Example 1: Small artificial example

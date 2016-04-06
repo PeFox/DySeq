@@ -18,8 +18,19 @@ StateTrans(x, first = TRUE, dep.lab = c("1", "0"), indep.lab = c("1-1",
 }
 \description{
 Produces a state transition table for dyadic binary sequences.
+}
+\details{
+That is, the behavior of interest in interval t, 
+is mapped against the combination of the observed 
+behaviors in the preceding interval (t - 1). 
+Hence, the total absolute frequency equals the number
+of time intervals minus 1. And the number of obtained 
+tables is equal the number of sequence-pairs.
+
+printing the output will display mean frequencies. For inspecting individual cases use [[original-rownumber]].
+
 For an extensive overview see Kenny, Kashy and Cook (2006).
-The original idea stems from (as far as known) Bakeman and Gottman (1997).
+The original idea stems from (to our knowledge) Bakeman and Gottman (1997).
 }
 \examples{
 

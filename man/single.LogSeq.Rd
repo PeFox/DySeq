@@ -12,7 +12,7 @@ single.LogSeq(x, case)
 \item{case}{determines which case should be shown.}
 }
 \description{
-prints estimates vor single case out of an LogSeq object
+prints estimates vor single case out of an LogSeq object, see: \code{\link{LogSeq}}
 }
 \examples{
 data(CouplesCope)
@@ -20,7 +20,7 @@ my.states<-StateExpand(CouplesCope, 2:49, 50:97)
 my.trans<-StateTrans(my.states, FALSE)
 my.logseq<-LogSeq(my.trans)
 my.logseq
-single.LogSeq(my.logseq, 41)
+single.LogSeq(my.logseq, 41)  # prints estimates for case 41
 
 }
 

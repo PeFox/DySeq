@@ -1,7 +1,7 @@
 #'NumbOccur
 #'
-#'Returns the Number of occurences for sequences with different lenghts
-#'
+#'Returns the Number of occurences for sequences with different lenghts.
+#'Outside the context of sequence analysis this means that for each frequency of one specifics integer will be computed. 
 #'
 #'@param x Dataframe or matix containing one sequence per row
 #'@param y single integer: represents the occurence that should be counted
@@ -56,7 +56,7 @@ NumbOccur<-function(x,y,t=NA, prop=TRUE){
   if(is.numeric(t)){index<-t}
 
   for(k in 1:length(x[,1])){
-   output[k]<-sum(as.numeric(x[k,1:index[k]]))
+   output[k]<-sum(as.numeric(x[k,1:index[k]]), na.rm=TRUE)
   }
   if(prop)output<-output/index
 

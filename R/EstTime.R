@@ -1,21 +1,24 @@
 #'EstTime
 #'
-#'Simulates number of low or zero frequencies for a state-transition table
-#'and plots these against the number of time points/intervalls 
+#'\itemize{
+#'  \item Simulates k state-transition tables (see: \code{\link{StateTrans}}) based one state-transtion table containing expected population frequencies using the \code{\link{EstFreq}} function. 
+#'  \item Repeats simulations for a number of defined time intervals or until a termination criterion is reached.
+#'  \item The estimated number of cells with low or zero frequencies are computed.
+#'  \item The proportion of low/zero frequencies is plotted against the number of time points/intervalls. 
+#'}
 #'
-#'
-#'@param x a matrix containing the assumed probabilities (see EstFreq for further detail!)
-#'@param t optional: a vector of time intervalls for which frequencies should be simulated
+#'@param x a matrix containing the assumed probabilities (see \code{\link{EstFreq}} for further detail!)
+#'@param t optional: a vector of time intervalls for which frequencies should be simulated. Can be used to decrease simulation time!
 #'@param crit optional: but must be sepcified if t is not; 
 #'Simulations will end if the relative frequency of zero cells is less than crit
 #'@param zero optional: if FALSE simulations will end if number of low frequencies 
 #'(instead of zero frequencies) is less than crit
 #'@param k Number of simulations (at least 20.000 is recommended)
-#'@param min.cell a single integer defines what counts as a low frequency (5 by convention)
+#'@param min.cell a single integer defines what counts as a low frequency (lower than 5 by convention)
 #'@param pos position of the output's legend. 
 #'Options are: "bottomleft", "bottomright", "upperleft", and "upperright".
-#'@param smoothed logical value. If true, outputlines will be smoothed!
-#'@param show.it single integer that defines which steps of iteration protocol should be shown. Only active if t is not defined else iterationprotocoll is replaced with a progression bar
+#'@param smoothed logical value. If true, output lines will be smoothed!
+#'@param show.it single integer that defines which steps of iteration protocol should be shown. Only active if t is not defined else iteration protocoll is replaced with a progression bar
 #'@param max.it single integer that defines the maximum number of iterations if t is not specified.
 #'
 #'@return EstTime object; a list of three vectors

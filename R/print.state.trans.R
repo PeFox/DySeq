@@ -1,6 +1,6 @@
 #'print.state.trans
 #'
-#'Generates output for state.trans object
+#'Generates output for state.trans object, see: \code{\link{StateTrans}}
 #'
 #'
 #'@param x a state.trans object, that should be printed
@@ -10,25 +10,27 @@
 
 print.state.trans<-function(x, ...){
 
+  if(length(x)==1){
+    print(unclass(x))
+    
+  } else {
+    if(class(x)[2]!="state.trans") warning("x should be a state.trans object!")
 
+    l<-length(x)
 
-  if(class(x)[2]!="state.trans") warning("x should be a state.trans object!")
+    sum_tab<-x[[1]]
 
-  l<-length(x)
+      for(i in 2:length(x)){
+        sum_tab<-sum_tab+x[[i]]
+      }
 
-  sum_tab<-x[[1]]
+    mean_tab<-sum_tab/length(x)
 
-    for(i in 2:length(x)){
-      sum_tab<-sum_tab+x[[i]]
-    }
+    cat("\n\n A list of" , length(x), "state-transition tables! \n If you want to inspect a single case use [[case]] \n If you want to inspect several cases use [[from:to]] \n \n mean frequencies are:\n\n")
+    print(mean_tab)
 
-  mean_tab<-sum_tab/length(x)
-
-  cat("\n\n A list of" , length(x), "state-transition tables! \n If you want to inspect a single case use [[case]] \n If you want to inspect several cases use [[from:to]] \n \n mean frequencies are:\n\n")
-  print(mean_tab)
-
-  return(mean_tab)
-
+    return(mean_tab)
+  }
 }
 
 

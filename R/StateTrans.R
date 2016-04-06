@@ -1,8 +1,21 @@
 #'StateTrans
 #'
 #'Produces a state transition table for dyadic binary sequences.
+#'
+#'That is, the behavior of interest in interval t, 
+#'is mapped against the combination of the observed 
+#'behaviors in the preceding interval (t - 1). 
+#'Hence, the total absolute frequency equals the number
+#'of time intervals minus 1. And the number of obtained 
+#'tables is equal the number of sequence-pairs.   
+#'
+#'
+#'printing the output will display mean frequencies. For inspecting individual cases use [[original-rownumber]].
+#'
 #'For an extensive overview see Kenny, Kashy and Cook (2006).
-#'The original idea stems from (as far as known) Bakeman and Gottman (1997).
+#'The original idea stems from (to our knowledge) Bakeman and Gottman (1997).
+#'
+#'
 #'
 #'@param x Dataframe or matix containing combined sequences, see help(StateExpand)
 #'@param first logical value indicating if the first sequence should used as dependend variable (TRUE) or the second (FALSE)
@@ -12,7 +25,7 @@
 #'@references Bakeman, R., & Gottman, J. M. (1997). Observing interaction: An introduction to sequential analysis. Cambridge university press.
 #'@references Kenny, D. A., Kashy, D. A., & Cook, W. L. (2006). Dyadic data analysis. Guilford Press.
 #'
-#'
+#' 
 #'
 #'@examples
 #'

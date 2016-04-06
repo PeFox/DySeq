@@ -14,7 +14,7 @@
 \item{...}{further arguments passed to or from other methods.}
 }
 \description{
-Generates interaction diagram for LogSeq Objects
+Generates interaction diagram for LogSeq Objects, see: \code{\link{LogSeq}}
 }
 \details{
 #'

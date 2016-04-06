@@ -8,9 +8,9 @@ EstTime(x, t = NA, crit = 0.05, zero = T, min.cell = 5, k = 20000,
   pos = "bottomleft", smoothed = T, show.it = 10, max.it = 10000)
 }
 \arguments{
-\item{x}{a matrix containing the assumed probabilities (see EstFreq for further detail!)}
+\item{x}{a matrix containing the assumed probabilities (see \code{\link{EstFreq}} for further detail!)}
 
-\item{t}{optional: a vector of time intervalls for which frequencies should be simulated}
+\item{t}{optional: a vector of time intervalls for which frequencies should be simulated. Can be used to decrease simulation time!}
 
 \item{crit}{optional: but must be sepcified if t is not; 
 Simulations will end if the relative frequency of zero cells is less than crit}
@@ -18,16 +18,16 @@ Simulations will end if the relative frequency of zero cells is less than crit}
 \item{zero}{optional: if FALSE simulations will end if number of low frequencies 
 (instead of zero frequencies) is less than crit}
 
-\item{min.cell}{a single integer defines what counts as a low frequency (5 by convention)}
+\item{min.cell}{a single integer defines what counts as a low frequency (lower than 5 by convention)}
 
 \item{k}{Number of simulations (at least 20.000 is recommended)}
 
 \item{pos}{position of the output's legend. 
 Options are: "bottomleft", "bottomright", "upperleft", and "upperright".}
 
-\item{smoothed}{logical value. If true, outputlines will be smoothed!}
+\item{smoothed}{logical value. If true, output lines will be smoothed!}
 
-\item{show.it}{single integer that defines which steps of iteration protocol should be shown. Only active if t is not defined else iterationprotocoll is replaced with a progression bar}
+\item{show.it}{single integer that defines which steps of iteration protocol should be shown. Only active if t is not defined else iteration protocoll is replaced with a progression bar}
 
 \item{max.it}{single integer that defines the maximum number of iterations if t is not specified.}
 }
@@ -36,8 +36,12 @@ EstTime object; a list of three vectors
 if printed, provides a plot of expected number of low and zero cell frequencies
 }
 \description{
-Simulates number of low or zero frequencies for a state-transition table
-and plots these against the number of time points/intervalls
+\itemize{
+ \item Simulates k state-transition tables (see: \code{\link{StateTrans}}) based one state-transtion table containing expected population frequencies using the \code{\link{EstFreq}} function. 
+ \item Repeats simulations for a number of defined time intervals or until a termination criterion is reached.
+ \item The estimated number of cells with low or zero frequencies are computed.
+ \item The proportion of low/zero frequencies is plotted against the number of time points/intervalls. 
+}
 }
 \details{
 First vector represents time points, second vector provides rel. frequency of cases with zero's, third vector rel. frequency of cases with low cell frequencies.

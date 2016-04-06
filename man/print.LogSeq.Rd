@@ -12,6 +12,6 @@
 \item{...}{further arguments passed to or from other methods.}
 }
 \description{
-Generates output for LogSeq Objects
+Generates output for LogSeq Objects, see: \code{\link{LogSeq}}
 }
 

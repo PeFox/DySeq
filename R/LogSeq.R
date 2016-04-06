@@ -1,8 +1,14 @@
 #'LogSeq
 #'
-#'Implementation of Bakeman & Gottman (1997) for sequence analysis
+#'Implementation of Bakeman & Gottman (1997) for sequence analysis.
 #'Kenny, Kashy & Cook (2006) provide further examples.
 #'
+#'\itemize{
+#' \item Runs logit models over a multiple number of state-transition tables, see: \code{\link{StateTrans}} 
+#' \item Aggregates coefficients of all logit models and tests them against zero. 
+#' \item If subgroups are defined, coefficients are tested to be different between groups.
+#' \item Print-function displays mean logit-coefficients and p-values. 
+#'}
 #'
 #'@param x a state.trans object or a list of 4*2 state-transition tables
 #'@param delta constant added to every cell, required if zero frequencies occur!
@@ -58,8 +64,8 @@ LogSeq<-function(x, delta=0.5, subgroups=NA, single.case=FALSE){
       p3<-unclass(summary(caselog.b3))$tests[2,3]
 
       p.values[i,1]<-NA
-      p.values[i,3]<-unlist(p1)
-      p.values[i,2]<-unlist(p2)
+      p.values[i,3]<-unlist(p1)# Ist Partner daher Col==3 
+      p.values[i,2]<-unlist(p2)# Ist Actor daher Col==2
       p.values[i,4]<-unlist(p3)
     }
 
@@ -69,8 +75,8 @@ LogSeq<-function(x, delta=0.5, subgroups=NA, single.case=FALSE){
     b3<-coef(caselog)$"1.2.3"[1,1,1]-coef(caselog)$"1.2.3"[1,1,2]   #interaction
 
     lambdas[i,1]<-unlist(b0)
-    lambdas[i,3]<-unlist(b1)
-    lambdas[i,2]<-unlist(b2)
+    lambdas[i,3]<-unlist(b1) # Ist Partner daher Col==3 
+    lambdas[i,2]<-unlist(b2) # Ist Actor daher Col==2
     lambdas[i,4]<-unlist(b3)
   }
 

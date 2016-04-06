@@ -13,7 +13,7 @@ StateExpand(x, pos1, pos2, replace.na = FALSE)
 
 \item{pos2}{a vector that indicates all columns of the second sequence}
 
-\item{replace.na}{an integer that is used for replacement or if FALSE, no replacement will take place}
+\item{replace.na}{a numeric that is used for replacement. If FALSE: no replacement will take place! 0 is handled as zero in this case not als FALSE!}
 }
 \value{
 returns a matrix with the combined sequences.
@@ -21,26 +21,31 @@ returns a matrix with the combined sequences.
 \description{
 Transforms dyadic binary data into state-expand-sequences
 (combines two corresponding sequences into one for every row of a dataframe)
+This approach is sometimes calles state expand procedure, see Vermunt (1993).
 }
 \details{
 Takes a dataframe or matrix with dyadic binary data in wide data format, that is:
-- one observation unit (for example one couple) is represented by one row
-- every observation unit has two sequences with the same length
-- entrys must be corresponding to each other (for example they represent same time intervalls)
-- every sequence contains only zeros and/or ones (for example behavior is shown or not)
-
-...transforms it into state-expand-sequences:
-- one sequence per observation unit that contains the same information as before
-- every entry represents the combination of the corresponding previous entrys
-- 0 represents two former zeros,
-- 1 represents a one in the first sequence and a zeros in the second
-- 2 represents a zero in the first sequence and a one in the second
-- 3 represents a one in both former sequeces
-
-.... use:
-- Most packages are only suited for univariat sequence analysis.
-- This function transforms dyadic dequences into univariate sequences.
-- state-expand-sequences are needed for some of the other functions of this package.
+\itemize{
+ \item one observation unit (for example one couple) is represented by one row
+ \item every observation unit has two sequences with the same length
+ \item entrys must be corresponding to each other (for example they represent same time intervalls)
+ \item every sequence contains only zeros and/or ones (for example behavior is shown or not)
+}
+and transforms it into state-expand-sequences:
+\itemize{
+ \item one sequence per observation unit that contains the same information as before
+ \item every entry represents the combination of the corresponding previous entrys
+ \item 0 represents two former zeros,
+ \item 1 represents a one in the first sequence and a zeros in the second
+ \item 2 represents a zero in the first sequence and a one in the second
+ \item 3 represents a one in both former sequeces
+}
+why/how to use:
+\itemize{
+ \item Most packages are only suited for univariat sequence analysis.
+ \item This function transforms dyadic dequences into univariate sequences.
+ \item state-expand-sequences are needed for some of the other functions of this package.
+}
 }
 \examples{
  # Example 1
@@ -90,6 +95,8 @@ Takes a dataframe or matrix with dyadic binary data in wide data format, that is
 }
 }
 \references{
+Vermunt, J. K. (1993). LEM: Log-linear and event history analysis with missing data using the EM algorithm (No. 93.09. 015/7). Tilburg University, Work and Organization Research Centre.
+
 Bakeman, R., & Gottman, J. M. (1997). Observing interaction: An introduction to sequential analysis. Cambridge university press.
  Kenny, D. A., Kashy, D. A., & Cook, W. L. (2006). Dyadic data analysis. Guilford Press.
 }

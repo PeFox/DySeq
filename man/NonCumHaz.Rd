@@ -14,7 +14,8 @@ NonCumHaz(x, t = NA, plot = FALSE)
 \item{plot}{logical value indicating if non-cumulated plot should be generated}
 }
 \description{
-Computes the non-cumulated hazard from cumulated hazard
+Computes the non-cumulated hazard from a vector containing the cumulated hazard. Can be applied directly to survfit-object (no need to extract the hazard first!).
+If the vector contains only hazard information for some but not all time intervalls, e.g. intervals with a hazard of zero are left out, a second vector is needed to match the hazard to the corresonding time intervals.
 }
 \examples{
 

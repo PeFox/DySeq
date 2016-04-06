@@ -1,6 +1,6 @@
 #'plot.LogSeq
 #'
-#'Generates interaction diagram for LogSeq Objects
+#'Generates interaction diagram for LogSeq Objects, see: \code{\link{LogSeq}}
 #'
 #'#'
 #'@param x a LogSeq object, that should be printed.
@@ -10,6 +10,12 @@
 #'@export
 
 plot.LogSeq<-function(x, y, ...){
+  
+  if(length(x[[1]])==4){
+    stop("Only one sequence was found!")
+  }
+             
+    
   if(class(x)!="LogSeq") warning("x should be a LogSeq object!")
 
   lambdas<-x[[1]]

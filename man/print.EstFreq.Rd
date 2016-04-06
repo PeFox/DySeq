@@ -12,6 +12,6 @@
 \item{...}{further arguments passed to or from other methods.}
 }
 \description{
-Generates output for EstFrag object
+Generates output for EstFrag object, see: \code{\link{EstFreq}}
 }
 

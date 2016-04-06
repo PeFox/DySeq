@@ -16,24 +16,19 @@ EstFreq(x, t, min.cell = 5, k = 20000)
 \item{k}{Number of simulations (at least 20.000 is recommended)}
 }
 \description{
-Simulate number low freq or zero frequencies 
-for a state-transition table dependend on
-the number of time points
+Simulates k state-transition tables (see: \code{\link{StateTrans}}) based one state-transtion table containing expected population frequencies (relative frequencies!). 
+If simulations should be conducted for different numbers of time intervalls, please see: \code{\link{EstTime}}
 }
 \details{
-the matrix must have 2*4 dimensions
-
-first column represents if behavior of interest is shown
-
-Second column represents if behavior of interest is not shown
-
-first row: behavior of interest of both partners was shown
-
-second row: behavior of interest was shown only by the partner
-
-third row: behavior of interest was shown only by the actor
-
-second row: behavior of interest was not shown
+The matrix must have 2*4 dimensions with the following information:
+\itemize{
+ \item First column represents if behavior of interest is shown
+ \item Second column represents if behavior of interest is not shown
+ \item First row shows if behavior of interest was shown by both partners in the previous time interval
+ \item Second row shows if behavior of interest was shown only by the partner in the previous time interval 
+ \item Third row shows if behavior of interest was shown only by the actor in the previous time interval
+ \item Second row shows if behavior of interest was not shown in the previous time interval
+}
 }
 \examples{
 \dontrun{
