@@ -49,7 +49,7 @@ EstTime<-function(x,t=NA,crit=0.05,zero=T,min.cell=5, k=20000, pos="bottomleft",
 
     cat("\n\nProgress:")
 
-    pb <- txtProgressBar(min = 0, max = length(t), style = 3)
+    pb <- utils::txtProgressBar(min = 0, max = length(t), style = 3)
 
 
     for(i in 1:length(t)){
@@ -57,7 +57,7 @@ EstTime<-function(x,t=NA,crit=0.05,zero=T,min.cell=5, k=20000, pos="bottomleft",
       zero[i]<-1-mean(a[[1]]==0)
       low[i]<-1-mean(a[[2]]<min.cell)
       Sys.sleep(0.001)
-      setTxtProgressBar(pb, i)
+      utils::setTxtProgressBar(pb, i)
     }
     t<-t
   } # If ZERO is used!

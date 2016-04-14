@@ -22,9 +22,11 @@
 #'@param dep.lab two-element string vector with labels for dependend variable (first entry corresponds to the value zero, the second to one)
 #'@param indep.lab four-element string vector with labels for the combined variable (order corresponds to the order of the StateExpand function)
 #'
-#'@references Bakeman, R., & Gottman, J. M. (1997). Observing interaction: An introduction to sequential analysis. Cambridge university press.
-#'@references Kenny, D. A., Kashy, D. A., & Cook, W. L. (2006). Dyadic data analysis. Guilford Press.
-#'
+#'@references 
+#'\itemize{
+#'  \item Bakeman, R., & Gottman, J. M. (1997) <DOI: 10.1017/cbo9780511527685 >
+#'  \item Kenny, D. A., Kashy, D. A., & Cook, W. L. (2006) <DOI: 10.1177/1098214007300894>
+#'}
 #' 
 #'
 #'@examples

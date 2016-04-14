@@ -16,9 +16,10 @@
 #'@param single.case should p-values be computed for single case analysis
 #'
 #'@references
-#'  Bakeman, R., & Gottman, J. M. (1997). Observing interaction: An introduction to sequential analysis. Cambridge university press.
-#'  Kenny, D. A., Kashy, D. A., & Cook, W. L. (2006). Dyadic data analysis. Guilford Press.
-#'
+#'\itemize{
+#'  \item Bakeman, R., & Gottman, J. M. (1997) <DOI: 10.1017/cbo9780511527685 >
+#'  \item Kenny, D. A., Kashy, D. A., & Cook, W. L. (2006) <DOI: 10.1177/1098214007300894>
+#'}
 #'
 #'
 #'
@@ -59,8 +60,8 @@ LogSeq<-function(x, delta=0.5, subgroups=NA, single.case=FALSE){
       caselog.b2<-MASS::loglm(~1+2+3+1*3+2*3, data=(casearray+delta), fit=F)
       caselog.b3<-MASS::loglm(~1+2+3+2*3+1*3+1*2, data=(casearray+delta), fit=F)
 
-      p1<-anova(caselog.b1,caselog.b3)[2,5]
-      p2<-anova(caselog.b2,caselog.b3)[2,5]
+      p1<-stats::anova(caselog.b1,caselog.b3)[2,5]
+      p2<-stats::anova(caselog.b2,caselog.b3)[2,5]
       p3<-unclass(summary(caselog.b3))$tests[2,3]
 
       p.values[i,1]<-NA
@@ -69,10 +70,10 @@ LogSeq<-function(x, delta=0.5, subgroups=NA, single.case=FALSE){
       p.values[i,4]<-unlist(p3)
     }
 
-    b0<-coef(caselog)$"3"[1]-coef(caselog)$"3"[2]   #mean
-    b1<-coef(caselog)$"1.3"[1,1]-coef(caselog)$"1.3"[1,2]   #partner
-    b2<-coef(caselog)$"2.3"[1,1]-coef(caselog)$"2.3"[1,2]   #actor
-    b3<-coef(caselog)$"1.2.3"[1,1,1]-coef(caselog)$"1.2.3"[1,1,2]   #interaction
+    b0<-stats::coef(caselog)$"3"[1]-stats::coef(caselog)$"3"[2]   #mean
+    b1<-stats::coef(caselog)$"1.3"[1,1]-stats::coef(caselog)$"1.3"[1,2]   #partner
+    b2<-stats::coef(caselog)$"2.3"[1,1]-stats::coef(caselog)$"2.3"[1,2]   #actor
+    b3<-stats::coef(caselog)$"1.2.3"[1,1,1]-stats::coef(caselog)$"1.2.3"[1,1,2]   #interaction
 
     lambdas[i,1]<-unlist(b0)
     lambdas[i,3]<-unlist(b1) # Ist Partner daher Col==3 

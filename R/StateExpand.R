@@ -2,14 +2,12 @@
 #'
 #'Transforms dyadic binary data into state-expand-sequences
 #'(combines two corresponding sequences into one for every row of a dataframe)
-#'This approach is sometimes calles state expand procedure, see Vermunt (1993).
 #'
 #'@param x Dataframe or matix containing the sequences that should be combined
 #'@param pos1 a vector that indicates all columns of the first sequence
 #'@param pos2 a vector that indicates all columns of the second sequence
 #'@param replace.na a numeric that is used for replacement. If FALSE: no replacement will take place! 0 is handled as zero in this case not als FALSE!
 #'
-#'@references Vermunt, J. K. (1993). LEM: Log-linear and event history analysis with missing data using the EM algorithm (No. 93.09. 015/7). Tilburg University, Work and Organization Research Centre.
 #'
 #'@return returns a matrix with the combined sequences. 
 #'
@@ -37,9 +35,10 @@
 #'}
 #'
 #'@references
-#'  Bakeman, R., & Gottman, J. M. (1997). Observing interaction: An introduction to sequential analysis. Cambridge university press.
-#'  Kenny, D. A., Kashy, D. A., & Cook, W. L. (2006). Dyadic data analysis. Guilford Press.
-#'
+#'\itemize{
+#'  \item Bakeman, R., & Gottman, J. M. (1997) <DOI: 10.1017/cbo9780511527685 >
+#'  \item Kenny, D. A., Kashy, D. A., & Cook, W. L. (2006) <DOI: 10.1177/1098214007300894>
+#'}
 #'@examples
 #'  # Example 1
 #'  data(CouplesCope) # Load sample data

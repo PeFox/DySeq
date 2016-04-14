@@ -21,7 +21,6 @@ returns a matrix with the combined sequences.
 \description{
 Transforms dyadic binary data into state-expand-sequences
 (combines two corresponding sequences into one for every row of a dataframe)
-This approach is sometimes calles state expand procedure, see Vermunt (1993).
 }
 \details{
 Takes a dataframe or matrix with dyadic binary data in wide data format, that is:
@@ -95,9 +94,9 @@ why/how to use:
 }
 }
 \references{
-Vermunt, J. K. (1993). LEM: Log-linear and event history analysis with missing data using the EM algorithm (No. 93.09. 015/7). Tilburg University, Work and Organization Research Centre.
-
-Bakeman, R., & Gottman, J. M. (1997). Observing interaction: An introduction to sequential analysis. Cambridge university press.
- Kenny, D. A., Kashy, D. A., & Cook, W. L. (2006). Dyadic data analysis. Guilford Press.
+\itemize{
+ \item Bakeman, R., & Gottman, J. M. (1997) <DOI: 10.1017/cbo9780511527685 >
+ \item Kenny, D. A., Kashy, D. A., & Cook, W. L. (2006) <DOI: 10.1177/1098214007300894>
+}
 }
 

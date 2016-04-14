@@ -2,7 +2,7 @@
 #'
 #'Generates interaction diagram for LogSeq Objects, see: \code{\link{LogSeq}}
 #'
-#'#'
+#'
 #'@param x a LogSeq object, that should be printed.
 #'@param y further arguments passed to or from other methods.
 #'@param ... further arguments passed to or from other methods.
@@ -20,10 +20,10 @@ plot.LogSeq<-function(x, y, ...){
 
   lambdas<-x[[1]]
 
-  intercept<-t.test(lambdas[,1])
-  actor<-t.test(lambdas[,3])
-  partner<-t.test(lambdas[,2])
-  interac<-t.test(lambdas[,4])
+  intercept<-stats::t.test(lambdas[,1])
+  actor<-stats::t.test(lambdas[,3])
+  partner<-stats::t.test(lambdas[,2])
+  interac<-stats::t.test(lambdas[,4])
 
   b<-c(intercept$estimate, actor$estimate, partner$estimate,interac$estimate)
 
@@ -63,6 +63,5 @@ plot.LogSeq<-function(x, y, ...){
 
 
 }
-
 
 
