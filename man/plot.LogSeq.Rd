@@ -16,7 +16,4 @@
 \description{
 Generates interaction diagram for LogSeq Objects, see: \code{\link{LogSeq}}
 }
-\details{
-#'
-}
 
