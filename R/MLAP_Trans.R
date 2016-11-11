@@ -35,7 +35,11 @@
 #'# Fits a multi-level APIM using lme4
 #'# Here a random intercept-only model
 #'\dontrun{
-#'install.packages("lme4")
+#'## make sure lme4 is installed!
+#'## and loaded!
+#'#install.packages("lme4")
+#'# library(lme4)
+#'
 #'set.seed(1234)
 #'glmer(DV~1+sex+Actor+Partner+Actor*Partner+
 #'        sex*Actor+sex*Partner+sex*Actor*Partner+
