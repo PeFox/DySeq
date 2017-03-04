@@ -90,8 +90,11 @@ StateTrans<-function(x,first=TRUE, dep.lab=c("1","0"), indep.lab=c("1-1","1-0","
       }
     }
 
+    
     output[[case]]<-y
     class(output)[2]<-"state.trans"
+    
+    attr(output, "firstSeq")<-first
 
   }
   return(output)

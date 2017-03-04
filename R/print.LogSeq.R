@@ -14,7 +14,12 @@ print.LogSeq<-function(x, ...){
              Aggregation not possible!
              Single case estimates are printed!")
     output<-t(x[[1]])
-    rownames(output)<-c("Intercept", "Actor", "Partner", "Interac")
+    
+    if(attr(x, "firstSeq")){
+      rownames(output)<-c("Intercept", "Actor", "Partner", "Interac")
+    }else{
+      rownames(output)<-c("Intercept","Partner","Actor","interac")
+    }
     colnames(output)<-"beta"
     print(output)
     return(output)
@@ -33,7 +38,13 @@ print.LogSeq<-function(x, ...){
       p.values<-c(intercept$p.value, actor$p.value, partner$p.value,interac$p.value)
 
       output_seq<-cbind(mean_beta,exp_mean_beta,p.values)
-      rownames(output_seq)<-c("intercept","actor","partner","interac")
+      
+      if(attr(x, "firstSeq")){
+        rownames(output_seq)<-c("Intercept", "Actor", "Partner", "Interac")
+      }else{
+        rownames(output_seq)<-c("Intercept","Partner","Actor","Interac")
+      }
+      
       output_seq<-as.data.frame(output_seq)
       output<-round(output_seq,3)
       print(output)
@@ -69,8 +80,13 @@ print.LogSeq<-function(x, ...){
       p.values.yx<-c(intercept.yx$p.value, actor.yx$p.value, partner.yx$p.value,interac.yx$p.value)
 
       output_seq<-cbind(mean_beta.x,p.values.x, mean_beta.y,p.values.y, p.values.yx)
-      rownames(output_seq)<-c("intercept","actor","partner","interac")
+      
       colnames(output_seq)<-c("mean beta g1", "p.value g1", "mean beta g2", "p.value g1", "p.value g1 vs g2")
+      if(attr(x, "firstSeq")){
+        rownames(output_seq)<-c("Intercept", "Actor", "Partner", "Interac")
+      }else{
+        rownames(output_seq)<-c("Intercept","Partner","Actor","Interac")
+      }
       output<-round(output_seq,3)
       print(output)
     }

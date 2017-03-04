@@ -88,6 +88,8 @@ LogSeq<-function(x, delta=0.5, subgroups=NA, single.case=FALSE){
   output[[3]]<-subgroups
   output[[4]]<-p.values
 
+  attr(output, "firstSeq")<-attr(x, "firstSeq")
+  
 
   class(output)[1]<-"LogSeq"
 
