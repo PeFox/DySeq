@@ -25,7 +25,12 @@ single.LogSeq<-function(x, case){
   p.value<-c(c(x[[4]][case,1], x[[4]][case,2],x[[4]][case,3], x[[4]][case,4]))
 
   output_seq<-cbind(beta,exp_beta, p.value)
-  rownames(output_seq)<-c("intercept","actor","partner","interac")
+  if(attr(x, "firstSeq")){
+    rownames(output_seq)<-c("Intercept", "Actor", "Partner", "Interac")
+  }else{
+    rownames(output_seq)<-c("Intercept","Partner","Actor","interac")
+  }
+
   output_seq<-as.data.frame(output_seq)
   output<-round(output_seq,3)
 
