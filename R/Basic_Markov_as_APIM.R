@@ -5,35 +5,44 @@
 #'Bootstrapping is used for approximating p-values. (H1: Effect is different from zero)
 #'
 #'
+#'@param x Dataframe or matix containing the sequences (not combined!)
+#'@param first a vector that indicates all columns of the first sequence
+#'@param second a vector that indicates all columns of the second sequence
+#'@param boot number of bootstrap samples
+#'@param SimOut For simulation purposes: If TRUE output and tansition matrix will be omitted. 
+#'@param CPU passes argument to boot() 
+#'@param sim passes argument to boot() 
+#'@param parallel passes argument to boot() 
+#'
 #'@examples
 #'\dontrun{
-#' 
+#' # Simulating example-data:
 #'trans1<-APIMtoTrans(B0_1=0, AE_1=1, PE_1=0, Int_1=0,
 #'                    B0_2=0, AE_2=0, PE_2=0, Int_2=0)
 #'
 #'x<-simSeqSample(trans=trans1, initial=rep(.25,4), length=100, N=100)
 #'
+#'# Running the function, 
 #'# small boot-size sample only for demonstration purposes! 
-#'MasAPIM(x, 1:100, 101:200, boot=10)
+#'Basic_Markov_as_APIM(x, 1:100, 101:200, boot=10)
 #'}
 #'@export
 #'
 Basic_Markov_as_APIM<-function(x, first, second, boot=1000, SimOut=FALSE, CPU=1, sim="ordinary", parallel = "no"){
   out<-c()
-  require(boot)  
-  require(TraMineR)
+
   
   MyBetas<-function(data, indices){
     a<-StateExpand(data[indices,], first, second) 
-    b<-suppressMessages(seqdef(a[,first], 
+    b<-suppressMessages(TraMineR::seqdef(a[,first], 
                                start = 1,
                                labels = c("0-0", "1-0", "0-1", "1-1")))
-    z<-suppressMessages(seqtrate(b))
+    z<-suppressMessages(TraMineR::seqtrate(b))
     return(TransToAPIM(z))
   }
   
   
-  results<-boot(data=x, 
+  results<-boot::boot(data=x, 
                 statistic=MyBetas, 
                 R=boot,
                 ncpus=CPU,
@@ -106,7 +115,7 @@ Basic_Markov_as_APIM<-function(x, first, second, boot=1000, SimOut=FALSE, CPU=1,
                   "P_SC_Partner",
                   "P_SC_Inter")
     
-    As_APIM<-out
+    output<-out
     
   }else{
     
@@ -125,18 +134,19 @@ Basic_Markov_as_APIM<-function(x, first, second, boot=1000, SimOut=FALSE, CPU=1,
     out2[1:4,2]<-out[9:12]
     out2[5:8,2]<-out[13:16]
     As_APIM<-out2
+    a<-StateExpand(x, first, second) 
+    b<-suppressMessages(TraMineR::seqdef(a[,first], 
+                                         start = 1,
+                                         labels = c("0-0", "1-0", "0-1", "1-1")))
+    Transition_Matrix<-suppressMessages(TraMineR::seqtrate(b))
+    
+    rownames(Transition_Matrix)<-c("[0:0 ->]", "[1:0 ->]", "[0:1 ->]", "[1:1 ->]")
+    colnames(Transition_Matrix)<-c("[-> 0:0]", "[-> 1:0]", "[-> 0:1]", "[-> 1:1]")
+    
+    output<-list(Transition_Matrix, As_APIM)
+    names(output)<-c("Transition Matrix", "Transitions converted as APIM")
   }
   
-  a<-StateExpand(x, first, second) 
-  b<-suppressMessages(seqdef(a[,first], 
-                             start = 1,
-                             labels = c("0-0", "1-0", "0-1", "1-1")))
-  Transition_Matrix<-suppressMessages(seqtrate(b))
-  
-  rownames(Transition_Matrix)<-c("[0:0 ->]", "[1:0 ->]", "[0:1 ->]", "[1:1 ->]")
-  colnames(Transition_Matrix)<-c("[-> 0:0]", "[-> 1:0]", "[-> 0:1]", "[-> 1:1]")
-  
-  output<-list(Transition_Matrix, As_APIM)
-  names(output)<-c("Transition Matrix", "Transitions converted as APIM")
+
   return(output)
 }

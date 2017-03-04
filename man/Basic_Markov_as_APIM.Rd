@@ -7,6 +7,23 @@
 Basic_Markov_as_APIM(x, first, second, boot = 1000, SimOut = FALSE,
   CPU = 1, sim = "ordinary", parallel = "no")
 }
+\arguments{
+\item{x}{Dataframe or matix containing the sequences (not combined!)}
+
+\item{first}{a vector that indicates all columns of the first sequence}
+
+\item{second}{a vector that indicates all columns of the second sequence}
+
+\item{boot}{number of bootstrap samples}
+
+\item{SimOut}{For simulation purposes: If TRUE output and tansition matrix will be omitted.}
+
+\item{CPU}{passes argument to boot()}
+
+\item{sim}{passes argument to boot()}
+
+\item{parallel}{passes argument to boot()}
+}
 \description{
 Fits a basic Markov-model on dyadic sequences. 
 The transition matrix is converted into equivalent APIM-beta-coefficients.
@@ -14,14 +31,15 @@ Bootstrapping is used for approximating p-values. (H1: Effect is different from 
 }
 \examples{
 \dontrun{
-
+# Simulating example-data:
 trans1<-APIMtoTrans(B0_1=0, AE_1=1, PE_1=0, Int_1=0,
                    B0_2=0, AE_2=0, PE_2=0, Int_2=0)
 
 x<-simSeqSample(trans=trans1, initial=rep(.25,4), length=100, N=100)
 
+# Running the function, 
 # small boot-size sample only for demonstration purposes! 
-MasAPIM(x, 1:100, 101:200, boot=10)
+Basic_Markov_as_APIM(x, 1:100, 101:200, boot=10)
 }
 }
 
