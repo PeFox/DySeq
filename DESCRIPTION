@@ -5,10 +5,10 @@ Version: 0.13
 Title: Functions for Dyadic Sequence Analyses
 Author: Peter Fuchs
 Maintainer: Peter Fuchs <Pete.Fuchs@gmail.com>
-Depends: R (>= 3.2.1),
+Depends: R (>= 3.2.1), boot, TraMineR
 Imports: MASS
-Suggests: TraMineR, survival, lme4
-Description: Small collection of functions for dyadic binary/dichotomous sequence analyses, e.g. transforming sequences into time-to-event data, implementation of Bakeman & Gottman's (1997) approach of aggregated logit-models, and simulating expected number of low/zero frequencies for state-transition tables. Further functions will be added in future releases. References: Bakeman, R., & Gottman, J. M. (1997) <DOI:10.1017/cbo9780511527685>.  
+Suggests: survival, lme4
+Description: Small collection of functions for dyadic binary/dichotomous sequence analyses, namely: implementation of Bakeman & Gottman's (1997) approach of using aggregated logit-models for estimating an actor-partner-interaktion model; transforming sequences into multi-level data for estimating an APIM via generalized multi-level modes; fitting a basic Markov model and translating transition probabilities into APIM coefficients; simulations which can be used to estimate the optimal sample size and optimal length of sequences.  References: Bakeman, R., & Gottman, J. M. (1997) <DOI:10.1017/cbo9780511527685>.  
 License: GPL-3
 LazyData: TRUE
 RoxygenNote: 5.0.1
