@@ -25,16 +25,17 @@
 #'
 #'
 #'@examples
+#'\dontrun{
 #'data(CouplesCope)
 #'my.states<-StateExpand(CouplesCope, 2:49, 50:97)
 #'my.trans<-StateTrans(my.states, FALSE)
-#'my.logseq<-LogSeq(my.trans)
+#'my.logseq<-LogSeq(my.trans, single.case=TRUE)
 #'my.logseq
 #'
 #'plot(my.logseq) # interaction can be plotted
 #'
 #'single.LogSeq(my.logseq, 41) # for single case analysis
-#'
+#'}
 #'@export
 
 
