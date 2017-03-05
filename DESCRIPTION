@@ -1,7 +1,7 @@
 Package: DySeq
 Type: Package
 Date: 2016-04-01
-Version: 0.20
+Version: 0.21
 Title: Functions for Dyadic Sequence Analyses
 Author: Peter Fuchs
 Maintainer: Peter Fuchs <Pete.Fuchs@gmail.com>
