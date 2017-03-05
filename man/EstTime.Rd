@@ -53,4 +53,3 @@ my.cellproblems<-EstTime(my.trans.table, k=500) # low k only for examplification
 my.cellproblems
 }
 }
-

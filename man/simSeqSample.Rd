@@ -30,4 +30,3 @@ initial<-c(.25 , .25 , .25 , .25)
 simSeq(test1, initial, 30)
 
 }
-

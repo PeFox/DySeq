@@ -38,4 +38,3 @@ The data frame contains 45 rows (subjects) and 62 columns. Columns 1 to
 31 correspond to the human behavior, columns 32:61 to the algorithm.
 }
 \keyword{datasets}
-

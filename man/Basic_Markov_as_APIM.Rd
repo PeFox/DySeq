@@ -42,4 +42,3 @@ x<-simSeqSample(trans=trans1, initial=rep(.25,4), length=100, N=100)
 Basic_Markov_as_APIM(x, 1:100, 101:200, boot=10)
 }
 }
-

@@ -46,4 +46,3 @@ single.LogSeq(my.logseq, 41) # for single case analysis
  \item Kenny, D. A., Kashy, D. A., & Cook, W. L. (2006) <DOI: 10.1177/1098214007300894>
 }
 }
-

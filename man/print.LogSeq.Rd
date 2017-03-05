@@ -14,4 +14,3 @@
 \description{
 Generates output for LogSeq Objects, see: \code{\link{LogSeq}}
 }
-

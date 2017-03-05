@@ -25,4 +25,3 @@ observation, which is nested within dyads.
 data(CouplesCope)
 ML_data<-ML_Trans(CouplesCope, 2:49, 50:97)
 }
-

@@ -12,11 +12,11 @@
 print.EstTime<-function(x, pos=NA, ...){
 pos<-attributes(x)$pos
 
-plot(smooth(x[[2]],"3RS3R")~x[[1]], typ="l", ylim=c(0,1), xlim=c(min(x[[1]]), max(x[[1]])), xlab="number of time points", ylab="expected")
+graphics::plot(smooth(x[[2]],"3RS3R")~x[[1]], typ="l", ylim=c(0,1), xlim=c(min(x[[1]]), max(x[[1]])), xlab="number of time points", ylab="expected")
 
-lines(smooth(x[[3]],"3RS3R")~x[[1]],lty=2)
-legend(pos, "cell problems", c("zero frequencies", "low frequencies"), lty=c(1,2))
-title("Expected number of cases with cell frequency problems")
+graphics::lines(smooth(x[[3]],"3RS3R")~x[[1]],lty=2)
+graphics::legend(pos, "cell problems", c("zero frequencies", "low frequencies"), lty=c(1,2))
+graphics::title("Expected number of cases with cell frequency problems")
 }
 
 

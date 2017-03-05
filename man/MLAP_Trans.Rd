@@ -57,4 +57,3 @@ glmer(DV~1+sex+Actor+Partner+Actor*Partner+
 
 
 }
-

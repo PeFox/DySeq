@@ -60,4 +60,3 @@ NonCumHaz(my.fit$cumhaz, my.fit$time, plot=TRUE) # if over packages than 'surviv
 }
 
 }
-

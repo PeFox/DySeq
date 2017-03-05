@@ -14,4 +14,3 @@
 \description{
 Generates output for EstFrag object, see: \code{\link{EstFreq}}
 }
-

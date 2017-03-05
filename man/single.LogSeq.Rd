@@ -23,4 +23,3 @@ my.logseq
 single.LogSeq(my.logseq, 41)  # prints estimates for case 41
 
 }
-

@@ -39,4 +39,3 @@ last occurence of 1 would be the forth column, and so on.
  LastOccur(CouplesCope[,2:49],1)
 
 }
-

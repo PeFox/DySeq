@@ -14,4 +14,3 @@
 \description{
 Generates output for state.trans object, see: \code{\link{StateTrans}}
 }
-

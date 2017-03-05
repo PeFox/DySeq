@@ -47,18 +47,18 @@ plot.LogSeq<-function(x, y, ...){
     yy<-yy/(yy+1)
   }
 
-  plot(c(0, 1),c(yy, ny),
+  graphics::plot(c(0, 1),c(yy, ny),
        xlim=c(-0.2,1.2), ylim=c(0,1),
        type="l",
        xlab="Partner reaction at t-1",
        ylab="Probability of actor reaction at timeinterval t",
        xaxt="n")
-  axis(side = 1,
+  graphics::axis(side = 1,
        at = c(0,1),
        labels = c("yes", "no"),
        tck=-.05)
-  lines(c(0, 1),c(yn, nn), lty=2 )
-  legend(0.5, .95, c("Actor reaction at t-1", "no actor reaction at t-1"), lty=1:2)
+  graphics::lines(c(0, 1),c(yn, nn), lty=2 )
+  graphics::legend(0.5, .95, c("Actor reaction at t-1", "no actor reaction at t-1"), lty=1:2)
 
 
 

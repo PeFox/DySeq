@@ -16,4 +16,3 @@
 \description{
 Generates output for EstTime object, see: \code{\link{EstTime}}
 }
-

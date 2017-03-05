@@ -57,4 +57,3 @@ StateTrans(my.s, FALSE)[[41]]
  \item Kenny, D. A., Kashy, D. A., & Cook, W. L. (2006) <DOI: 10.1177/1098214007300894>
 }
 }
-

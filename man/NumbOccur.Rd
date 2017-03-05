@@ -44,4 +44,3 @@ my.last<-LastOccur(CouplesCope[,2:49],1) # how long till stress ended?
 NumbOccur(CouplesCope[,50:97],1, my.last) # how often did dyadic coping occure in this time?
 
 }
-
