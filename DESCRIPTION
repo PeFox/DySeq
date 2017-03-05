@@ -22,7 +22,7 @@ Description: Small collection of functions for dyadic binary/dichotomous
     generalized multi-level models; fitting a basic Markov model and translating
     transition probabilities into APIM coefficients; simulations which can be used
     to estimate the optimal sample size and optimal length of sequences. References:
-    Bakeman, R., & Gottman, J. M. (1997) <DOI:10.1017/cbo9780511527685>.
+    Bakeman, R., & Gottman, J. M. (1997) <DOI:10.1017/cbo9780511527685> 
 License: GPL-3
 LazyData: TRUE
 RoxygenNote: 6.0.1
