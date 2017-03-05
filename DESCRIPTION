@@ -1,7 +1,7 @@
 Package: DySeq
 Type: Package
-Date: 2016-04-01
-Version: 0.21
+Date: 2017-03-05
+Version: 0.22
 Title: Functions for Dyadic Sequence Analyses
 Author: Peter Fuchs
 Maintainer: Peter Fuchs <Pete.Fuchs@gmail.com>
@@ -15,14 +15,12 @@ Imports:
 Suggests:
     survival,
     lme4
-Description: Small collection of functions for dyadic binary/dichotomous
-    sequence analyses, namely: implementation of Bakeman & Gottman's (1997) approach
-    of using aggregated logit-models for estimating an actor-partner-interaction
-    model; transforming sequences into multi-level data for estimating an APIM via
-    generalized multi-level models; fitting a basic Markov model and translating
-    transition probabilities into APIM coefficients; simulations which can be used
-    to estimate the optimal sample size and optimal length of sequences. References:
-    Bakeman, R., & Gottman, J. M. (1997) <DOI:10.1017/cbo9780511527685>
+Description: Functions for dyadic binary/dichotomous sequence analyses are implemented in this contribution.
+             The focus is on estimating actor-partner-interaction models using various approaches, for  
+             instances the approach of Bakeman & Gottman's (1997) <DOI:10.1017/cbo9780511527685>,
+             generalized multi-level models, and basic Markov models. Moreover, coefficients of one model 
+             can be translated into those of the other models. Finally, simulation-based power analyses are
+             provided. 
 License: GPL-3
 LazyData: TRUE
 RoxygenNote: 6.0.1
